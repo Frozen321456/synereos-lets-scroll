@@ -1,3 +1,8 @@
+/**
+ * Synereos Main Script - Main Application Logic
+ * Loaded lazily after page load
+ */
+
 // IMMEDIATELY hide preloader - runs before body renders
 if (document.getElementById('preloader')) {
   document.getElementById('preloader').style.display = 'none';
