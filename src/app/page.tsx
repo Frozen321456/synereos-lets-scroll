@@ -23,11 +23,9 @@ const sections = [
 
 export default function HomePage() {
   useEffect(() => {
-    // Immediate preloader hide
     const preloader = document.getElementById('preloader');
     if (preloader) preloader.style.display = 'none';
     
-    // Safety timeout
     setTimeout(() => {
       const preloader = document.getElementById('preloader');
       if (preloader) preloader.style.display = 'none';
@@ -162,7 +160,7 @@ export default function HomePage() {
           <div className="media-panel">
             <span className="media-tag">● live sandbox — demo view</span>
             <canvas className="stage-canvas" id="build-canvas"></canvas>
-            <video className="stage-video" autoplay muted loop playsinline playsinline poster="/assets/intent.png" preload="metadata">
+            <video className="stage-video" autoPlay muted loop playsInline playsInline poster="/assets/intent.png" preload="metadata">
               <source src="/assets/vid/build.mp4" type="video/mp4" media="(min-width:641px)" />
               <source src="/assets/vid/build-m.mp4" type="video/mp4" media="(max-width:640px)" />
             </video>
