@@ -8,6 +8,7 @@ import Navbar from '@/components/Navbar';
 import SignalSpine from '@/components/SignalSpine';
 import HeroCanvas from '@/components/HeroCanvas';
 import NetworkCanvas from '@/components/NetworkCanvas';
+import Script from 'next/script';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -230,43 +231,68 @@ export default function HomePage() {
 
       </main>
 
-            <footer>
-              <div className="foot-grid">
-                <div className="foot-brand">
-                  <div className="logo"><span className="logo-dot"></span>SYNEREOS</div>
-                  <p>An AI Operating System for Builders. Think. Build. Orchestrate.</p>
-                </div>
-                <div className="foot-col">
-                  <h4>Product</h4>
-                  <a href="#intent">Intent</a>
-                  <a href="#think">Think</a>
-                  <a href="#build">Build</a>
-                  <a href="#orchestrate">Orchestrate</a>
-                  <a href="#execute">Execute</a>
-                </div>
-                <div className="foot-col">
-                  <h4>Research</h4>
-                  <a href="#hexim">HEXIM</a>
-                  <a href="#">Sparse MoE</a>
-                  <a href="#">Compression</a>
-                  <a href="#">Edge AI</a>
-                </div>
-                <div className="foot-col">
-                  <h4>Company</h4>
-                  <a href="#">About</a>
-                  <a href="#">Careers</a>
-                  <a href="#">Blog</a>
-                  <a href="#">Contact</a>
-                </div>
-              </div>
-              <div className="foot-bottom">
-                <div>© 2026 Synereos. All rights reserved.</div>
-                <div className="legal"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Security</a></div>
-              </div>
-            </footer>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-      <script
+      <footer>
+        <div className="foot-grid">
+          <div className="foot-brand">
+            <div className="logo"><span className="logo-dot"></span>SYNEREOS</div>
+            <p>An AI Operating System for Builders. Think. Build. Orchestrate.</p>
+          </div>
+          <div className="foot-col">
+            <h4>Product</h4>
+            <a href="#intent">Intent</a>
+            <a href="#think">Think</a>
+            <a href="#build">Build</a>
+            <a href="#orchestrate">Orchestrate</a>
+            <a href="#execute">Execute</a>
+          </div>
+          <div className="foot-col">
+            <h4>Research</h4>
+            <a href="#hexim">HEXIM</a>
+            <a href="#">Sparse MoE</a>
+            <a href="#">Compression</a>
+            <a href="#">Edge AI</a>
+          </div>
+          <div className="foot-col">
+            <h4>Company</h4>
+            <a href="#">About</a>
+            <a href="#">Careers</a>
+            <a href="#">Blog</a>
+            <a href="#">Contact</a>
+          </div>
+        </div>
+        <div className="foot-bottom">
+          <div>© 2026 Synereos. All rights reserved.</div>
+          <div className="legal"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Security</a></div>
+        </div>
+      </footer>
+
+      <Script
+        id="preloader-hide"
+        strategy="beforeInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            // IMMEDIATELY hide preloader - runs before body renders
+            if (document.getElementById('preloader')) {
+              document.getElementById('preloader').style.display = 'none';
+            }
+            setTimeout(() => {
+              const preloader = document.getElementById('preloader');
+              if (preloader) preloader.style.display = 'none';
+            }, 100);
+          `
+        }}
+      />
+      <Script
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        defer
+      />
+      <Script
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+        defer
+      />
+      <Script
+        id="main-script"
+        strategy="lazyOnload"
         dangerouslySetInnerHTML={{
           __html: `
             (function(){
