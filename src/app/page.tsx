@@ -102,7 +102,7 @@ export default function HomePage() {
         <section className="stage" id="intent" data-stage>
           <div className="stage-num">01 / 05</div>
           <div className="stage-head">
-            <h2 data-reveal>Say what you<br><b>mean to build.</b></h2>
+            <h2 data-reveal>Say what you <br /> <b>mean to build.</b></h2>
             <p className="stage-lede" data-reveal>Every system starts as an unformed idea. Synereos gives it shape before it gives it code — turning a loose brief into a scoped, buildable spec.</p>
           </div>
           <div className="card-row">
@@ -128,7 +128,7 @@ export default function HomePage() {
         <section className="stage" id="think" data-stage>
           <div className="stage-num">02 / 05</div>
           <div className="stage-head">
-            <h2 data-reveal>Reason through it<br><b>before acting.</b></h2>
+            <h2 data-reveal>Reason through it <br /> <b>before acting.</b></h2>
             <p className="stage-lede" data-reveal>A plan gets tested against edge cases and prior runs, so the system commits to an approach it can actually defend.</p>
           </div>
           <div className="card-row">
@@ -154,7 +154,7 @@ export default function HomePage() {
         <section className="stage" id="build" data-stage>
           <div className="stage-num">03 / 05</div>
           <div className="stage-head">
-            <h2 data-reveal>Write it, run it,<br><b>watch it work.</b></h2>
+            <h2 data-reveal>Write it, run it, <br /> <b>watch it work.</b></h2>
             <p className="stage-lede" data-reveal>Code gets generated, executed, and tested in a live sandbox — with every change visible as it happens.</p>
           </div>
 
@@ -185,7 +185,7 @@ export default function HomePage() {
         <section className="stage" id="orchestrate" data-stage>
           <div className="stage-num">04 / 05</div>
           <div className="stage-head">
-            <h2 data-reveal>Coordinate every<br><b>agent and tool.</b></h2>
+            <h2 data-reveal>Coordinate every <br /> <b>agent and tool.</b></h2>
             <p className="stage-lede" data-reveal>Nothing runs in isolation. Synereos routes work between specialized agents, external tools, and your own infrastructure.</p>
           </div>
           <div className="card-row">
@@ -211,7 +211,7 @@ export default function HomePage() {
         <section className="hexim" id="hexim" data-stage>
           <div className="hexim-panel">
             <div className="hexim-eyebrow">RESEARCH PILLAR</div>
-            <h2>HEXIM — inference for<br>constrained hardware.</h2>
+            <h2>HEXIM — inference for <br /> constrained hardware.</h2>
             <p>Synereos runs on models that fit where they're deployed. HEXIM is the research effort behind that: a persistent agent and self-hosted inference stack built to run well below datacenter scale, without giving up reasoning quality.</p>
             <a href="#" className="hexim-link">Read the HEXIM research →</a>
           </div>
@@ -221,7 +221,7 @@ export default function HomePage() {
         <section className="execute" id="execute" data-stage>
           <div className="stage-num" style={{ textAlign: 'center' }}>05 / 05</div>
           <div className="eyebrow">READY WHEN YOU ARE</div>
-          <h2 data-reveal>Stop planning it.<br><em>Enter Synereos.</em></h2>
+          <h2 data-reveal>Stop planning it. <br /> <em>Enter Synereos.</em></h2>
           <div className="hero-actions">
             <a href="#" className="btn-primary">Enter Synereos →</a>
             <a href="#" className="btn-ghost">Talk to the team</a>
