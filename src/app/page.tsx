@@ -175,7 +175,7 @@ export default function HomePage() {
             </div>
             <div className="glass-card" data-reveal>
               <div className="tag">TEST</div>
-              <h3>Inline verification</div>
+              <h3>Inline verification</h3>
               <p>Every change runs against real tests before it's proposed as done.</p>
             </div>
           </div>
