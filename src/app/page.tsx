@@ -87,8 +87,8 @@ export default function HomePage() {
         <div className="hero-fade"></div>
         <div className="hero-inner">
           <div className="eyebrow">AN AI OPERATING SYSTEM FOR BUILDERS</div>
-          <h1>Build what<br><em>comes next.</em></h1>
-          <p>Synereos turns a raw idea into a running system — it reasons through the plan, writes and executes the work, and orchestrates every agent and tool in between.</p>
+          <h1 data-reveal>Build what comes next.</h1>
+          <p data-reveal>Synereos turns a raw idea into a running system — it reasons through the plan, writes and executes the work, and orchestrates every agent and tool in between.</p>
           <div className="hero-actions">
             <a href="#execute" className="btn-primary">Enter Synereos →</a>
             <a href="#hexim" className="btn-ghost">Read the HEXIM research</a>
