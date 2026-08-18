@@ -25,9 +25,9 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 40) {
-        document.documentElement.classList.add('scrolled');
+        setScrolled(true);
       } else {
-        document.documentElement.classList.remove('scrolled');
+        setScrolled(false);
       }
     };
     
@@ -44,7 +44,7 @@ export default function Navbar() {
     setMobileOpen(!mobileOpen);
   };
 
-  const closeMenu = () => setMobileOpen(false);
+  const handleCloseMenu = () => setMobileOpen(false);
 
   return (
     <>
@@ -58,24 +58,19 @@ export default function Navbar() {
         <div className="spine-line-fg" id="spine-fg" />
       </div>
 
-      <div id="top" />
+      <div id="top"></div>
 
       {/* Sticky Glass Navbar */}
       <header id="navbar" className="nav-bar" role="navigation" aria-label="Main navigation">
         <div className="nav-left">
-          <a href="#top" className="logo" aria-label="Synereos Home">
-            <span className="logo-dot" aria-hidden="true" />
-            <span className="logo-text">SYNEREOS</span>
-          </a>
+          <a className="logo" href="#top"><span className="logo-dot" aria-hidden="true" />SYNEREOS</a>
         </div>
-
-        <nav className="nav-links" id="nav-links" role="menubar" aria-label="Main sections">
+        <nav className="nav-links" id="nav-links" role="menubar">
           {sections.map((section, index) => (
             <a
               key={section.id}
               href={`#${section.id}`}
               data-nav
-              role="menuitem"
               onClick={(e) => {
                 e.preventDefault();
                 document.getElementById(section.id)?.scrollIntoView({ behavior: 'smooth' });
@@ -85,60 +80,19 @@ export default function Navbar() {
             </a>
           ))}
         </nav>
-
-        <a 
-          href="#execute" 
-          className="nav-cta" 
-          id="nav-cta-desktop" 
-          style={{ display: window.innerWidth > 860 ? 'inline-flex' : 'none' }}
-        >
-          Enter Synereos
-        </a>
-
-        <button 
-          className="nav-burger" 
-          id="burger" 
-          aria-label="Toggle navigation menu" 
-          aria-expanded={false}
-          aria-controls="mobile-menu"
-          onClick={() => document.getElementById('mobile-menu')?.classList.toggle('open')}
-        >
+        <a className="nav-cta" href="#execute" style={{ display: window.innerWidth > 860 ? 'inline-flex' : 'none' }} id="nav-cta-desktop">Enter Synereos</a>
+        <button className="nav-burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </header>
 
-      {/* Mobile drawer overlay */}
-      <div className="nav-overlay" id="mobile-menu" aria-hidden="true">
-        <div className="nav-drawer" role="dialog" aria-label="Navigation menu">
-          <button 
-            className="nav-drawer-close" 
-            aria-label="Close navigation"
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <line x1="18" y1="6" x2="6" y2="18" />
-              <line x1="6" y1="6" x2="18" y2="18" />
-            </svg>
-          </button>
-          <nav className="nav-links" role="menubar">
-            {sectionsWithExecute.map((section) => (
-              <a 
-                key={section.id} 
-                href={`#${section.id}`} 
-                data-nav-mobile 
-                role="menuitem"
-                onClick={() => {
-                  document.getElementById(section.id)?.scrollIntoView({ behavior: 'smooth' });
-                  document.getElementById('mobile-menu')?.classList.remove('open');
-                }}
-              >
-                {section.label}
-              </a>
-            ))}
-            <a className="nav-cta" href="#execute" style={{ marginTop: '16px', width: '100%', textAlign: 'center' }}>
-              Enter Synereos
-            </a>
-          </nav>
-        </nav>
+      <div id="mobile-menu">
+        <a href="#intent" data-nav-mobile>Intent</a>
+        <a href="#think" data-nav-mobile>Think</a>
+        <a href="#build" data-nav-mobile>Build</a>
+        <a href="#orchestrate" data-nav-mobile>Orchestrate</a>
+        <a href="#hexim" data-nav-mobile>HEXIM</a>
+        <a href="#execute" className="mm-cta" data-nav-mobile>Enter Synereos</a>
       </div>
     </>
   );

@@ -27,7 +27,7 @@ export default function HeroCanvas() {
       r: number;
     }
 
-    let points: Array<{ x: number; y: number; vx: number; vy: number; r: number }> = [];
+    let points: Point[] = [];
 
     function init() {
       const W = canvas.clientWidth;
@@ -96,8 +96,7 @@ export default function HeroCanvas() {
       const H = canvas.clientHeight;
       canvas.width = W * 2;
       canvas.height = H * 2;
-      const ctx = canvas.getContext('2d');
-      if (ctx) ctx.setTransform(2, 0, 0, 2, 0, 0);
+      ctx.setTransform(2, 0, 0, 2, 0, 0);
     }
 
     window.addEventListener('resize', resize);
